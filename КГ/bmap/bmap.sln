@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bmap", "bmap\bmap.vcxproj", "{674F06F2-BF20-4B71-B1A0-4E8C08059E44}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{674F06F2-BF20-4B71-B1A0-4E8C08059E44}.Debug|x86.ActiveCfg = Debug|Win32
+		{674F06F2-BF20-4B71-B1A0-4E8C08059E44}.Debug|x86.Build.0 = Debug|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79CAA570-00D8-4D22-8683-732798710D02}
+	EndGlobalSection
+EndGlobal
