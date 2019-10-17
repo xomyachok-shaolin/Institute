@@ -9,6 +9,9 @@
 #include <math.h>
 #include <assert.h>
 #include "resource.h"
+
+#include <commdlg.h>
+
 #define MF_W 720
 #define MF_H 520
 int gde_w = 0, gde_h = 0;

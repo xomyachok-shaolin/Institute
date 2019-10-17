@@ -5,6 +5,7 @@
 // тестирование шрифтов
 void fonts(void) {
 	/* Использование стандартных шрифтов */
+
 	// извлекает дескриптор одного из предопределенных (стандартных) перьев, кистей, шрифтов или палитр.
 	HFONT hf = (HFONT)GetStockObject(OEM_FIXED_FONT);
 	// выбираем шрифт в контекст
@@ -82,4 +83,23 @@ void fonts(void) {
 
 	// принуд вывод в окно вывода
 	InvalidateRect(hWndOut, 0, 1);
+
+	/* Выбор шрифта при помощи стандартного диалога */
+	HDC hdc; CHOOSEFONTA cf; static LOGFONT lf;
+	static DWORD rgbCurrent;
+	ZeroMemory(&cf, sizeof(CHOOSEFONT));
+	cf.lStructSize = sizeof(CHOOSEFONT);
+	cf.hwndOwner = hWndOut;
+	cf.lpLogFont = &lf;
+	cf.rgbColors = rgbCurrent;
+	cf.Flags = CF_SCREENFONTS | CF_EFFECTS;
+	if (ChooseFont(&cf) == TRUE) {
+		hdc = GetDC(hWndOut);
+		HFONT hf = CreateFontIndirect(cf.lpLogFont);
+		SelectObject(hdc, hf);
+		rgbCurrent = cf.rgbColors;
+		SetTextColor(hdc, rgbCurrent);
+		TextOut(hdc, 0, 80, "AbCdEf 012345 АБВГДЕ", 20);
+		ReleaseDC(hWndOut, hdc);
+	}
 }
