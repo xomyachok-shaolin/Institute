@@ -4,75 +4,193 @@
 
 // тестирование шрифтов
 void fonts(void) {
+	/* »спользование стандартных шрифтов */
 	// извлекает дескриптор одного из предопределенных (стандартных) перьев, кистей, шрифтов или палитр.
-	HFONT hf = (HFONT)GetStockObject(ANSI_VAR_FONT); // —истемный нормальный пропорциональный шрифт
-	HFONT exhf = (HFONT)SelectObject(CDC, hf); // выбирает объект в заданный контекст устройства
-	SetTextColor(CDC, RGB(255, 0, 0)); // установить цвет
+	HFONT hf = (HFONT)GetStockObject(WHITE_BRUSH);
+	// выбираем шрифт в контекст
+	HFONT exhf = (HFONT)SelectObject(CDC, hf);
+	// выбираем цвет и режимы вывода
+	SetTextColor(CDC, RGB(255, 0, 0));
+	SetBkColor(CDC, RGB(0, 0, 255));
+	// задает прозрачность
+	SetBkMode(CDC, OPAQUE);
 	SetTextAlign(CDC, TA_LEFT);
-	TextOut(CDC, 0, 0, "Ёто пример вывода строки текста", 31);
-	SetTextColor(CDC, RGB(0, 255, 255)); // установить цвет
-	SetBkColor(CDC, RGB(128, 0, 255)); // задает цвет фона
-	TextOut(CDC, 0, 20, "Ёто пример вывода строки текста", 31);
-	SetTextColor(CDC, RGB(0, 0, 255)); // установить цвет
-	SetBkColor(CDC, RGB(255, 0, 255)); // задает цвет фона
-	SetBkMode(CDC, OPAQUE); // устанавливает прозрачность
-	TextOut(CDC, 0, 40, "Ёто пример вывода строки текста", 31);
+	TextOut(CDC, 0, 0, "Ўрифт WHITE_BRUSH", 17);	
+	// выбираем предыд шрифт
 	SelectObject(CDC, exhf);
-	DeleteObject(hf); // удалить шрифт hf
-	// принудительный вывод в окно вывода
-	InvalidateRect(hWndOut, 0, 1);
+	DeleteObject(hf);
+	
+	hf = (HFONT)GetStockObject(LTGRAY_BRUSH);
+	SetTextColor(CDC, RGB(255, 255, 0));
+	SetBkColor(CDC, RGB(0, 0, 255));
+	SetBkMode(CDC, OPAQUE);
+	SetTextAlign(CDC, TA_LEFT);
+	TextOut(CDC, 0, 20, "Ўрифт LTGRAY_BRUSH", 18);
+	SelectObject(CDC, exhf);
+	DeleteObject(hf);
 
-	// извлекает дескриптор одного из предопределенных (стандартных) перьев, кистей, шрифтов или палитр.
-	hf = (HFONT)GetStockObject(DEFAULT_GUI_FONT); // —истемный нормальный пропорциональный шрифт
-	SetTextColor(CDC, RGB(255, 0, 0)); // установить цвет
-	SetBkColor(CDC, RGB(255, 255, 255)); // задает цвет фона
+	hf = (HFONT)GetStockObject(GRAY_BRUSH);
+	SetTextColor(CDC, RGB(0, 255, 255));
+	SetBkColor(CDC, RGB(255, 0, 0));
+	SetBkMode(CDC, OPAQUE);
 	SetTextAlign(CDC, TA_LEFT);
-	TextOut(CDC, 0, 80, "Ёто пример вывода строки текста", 31);
-	SetTextColor(CDC, RGB(0, 255, 255)); // установить цвет
-	SetBkColor(CDC, RGB(128, 0, 255)); // задает цвет фона
-	TextOut(CDC, 0, 100, "Ёто пример вывода строки текста", 31);
-	SetTextColor(CDC, RGB(0, 0, 255)); // установить цвет
-	SetBkColor(CDC, RGB(255, 0, 255)); // задает цвет фона
-	SetBkMode(CDC, OPAQUE); // устанавливает прозрачность
-	TextOut(CDC, 0, 120, "Ёто пример вывода строки текста", 31);
+	TextOut(CDC, 0, 40, "Ўрифт GRAY_BRUSH", 16);
 	SelectObject(CDC, exhf);
-	DeleteObject(hf); // удалить шрифт hf
-	// принудительный вывод в окно вывода
-	InvalidateRect(hWndOut, 0, 1);
+	DeleteObject(hf);
 
-	// извлекает дескриптор одного из предопределенных (стандартных) перьев, кистей, шрифтов или палитр.
-	hf = (HFONT)GetStockObject(WHITE_BRUSH); // —истемный нормальный пропорциональный шрифт
-	SetTextColor(CDC, RGB(255, 0, 0)); // установить цвет
-	SetBkColor(CDC, RGB(255, 255, 255)); // задает цвет фона
+	hf = (HFONT)GetStockObject(DKGRAY_BRUSH);
+	SetTextColor(CDC, RGB(255, 0, 255));
+	SetBkColor(CDC, RGB(0, 255, 0));
+	SetBkMode(CDC, OPAQUE);
 	SetTextAlign(CDC, TA_LEFT);
-	TextOut(CDC, 0, 160, "Ёто пример вывода строки текста", 31);
-	SetTextColor(CDC, RGB(0, 255, 255)); // установить цвет
-	SetBkColor(CDC, RGB(128, 0, 255)); // задает цвет фона
-	TextOut(CDC, 0, 180, "Ёто пример вывода строки текста", 31);
-	SetTextColor(CDC, RGB(0, 0, 255)); // установить цвет
-	SetBkColor(CDC, RGB(255, 0, 255)); // задает цвет фона
-	SetBkMode(CDC, OPAQUE); // устанавливает прозрачность
-	TextOut(CDC, 0, 200, "Ёто пример вывода строки текста", 31);
+	TextOut(CDC, 0, 60, "Ўрифт DKGRAY_BRUSH", 18);
 	SelectObject(CDC, exhf);
-	DeleteObject(hf); // удалить шрифт hf
-					  // принудительный вывод в окно вывода
-	InvalidateRect(hWndOut, 0, 1);
+	DeleteObject(hf);
 
-	// извлекает дескриптор одного из предопределенных (стандартных) перьев, кистей, шрифтов или палитр.
-	hf = (HFONT)GetStockObject(ANSI_FIXED_FONT); // —истемный нормальный пропорциональный шрифт
-	SetTextColor(CDC, RGB(255, 0, 0)); // установить цвет
-	SetBkColor(CDC, RGB(255, 255, 255)); // задает цвет фона
+	hf = (HFONT)GetStockObject(BLACK_BRUSH);
+	SetTextColor(CDC, RGB(128, 128, 0));
+	SetBkColor(CDC, RGB(0, 0, 128));
+	SetBkMode(CDC, OPAQUE);
 	SetTextAlign(CDC, TA_LEFT);
-	TextOut(CDC, 350, 0, "Ёто пример вывода строки текста", 31);
-	SetTextColor(CDC, RGB(0, 255, 255)); // установить цвет
-	SetBkColor(CDC, RGB(128, 0, 255)); // задает цвет фона
-	TextOut(CDC, 350, 20, "Ёто пример вывода строки текста", 31);
-	SetTextColor(CDC, RGB(0, 0, 255)); // установить цвет
-	SetBkColor(CDC, RGB(255, 0, 255)); // задает цвет фона
-	SetBkMode(CDC, OPAQUE); // устанавливает прозрачность
-	TextOut(CDC, 350, 40, "Ёто пример вывода строки текста", 31);
+	TextOut(CDC, 0, 80, "Ўрифт BLACK_BRUSH", 17);
 	SelectObject(CDC, exhf);
-	DeleteObject(hf); // удалить шрифт hf
-					  // принудительный вывод в окно вывода
+	DeleteObject(hf);
+
+	hf = (HFONT)GetStockObject(HOLLOW_BRUSH);
+	SetTextColor(CDC, RGB(0, 128, 128));
+	SetBkColor(CDC, RGB(128, 0, 0));
+	SetBkMode(CDC, OPAQUE);
+	SetTextAlign(CDC, TA_LEFT);
+	TextOut(CDC, 0, 100, "Ўрифт HOLLOW_BRUSH", 18);
+	SelectObject(CDC, exhf);
+	DeleteObject(hf);
+
+	hf = (HFONT)GetStockObject(NULL_BRUSH);
+	SetTextColor(CDC, RGB(128, 0, 128));
+	SetBkColor(CDC, RGB(0, 128, 0));
+	SetBkMode(CDC, OPAQUE);
+	SetTextAlign(CDC, TA_LEFT);
+	TextOut(CDC, 0, 120, "Ўрифт NULL_BRUSH", 16);
+	SelectObject(CDC, exhf);
+	DeleteObject(hf);
+
+	hf = (HFONT)GetStockObject(WHITE_PEN);
+	SetTextColor(CDC, RGB(0, 255, 0));
+	SetBkColor(CDC, RGB(255, 0, 255));
+	SetBkMode(CDC, OPAQUE);
+	SetTextAlign(CDC, TA_LEFT);
+	TextOut(CDC, 0, 140, "Ўрифт WHITE_PEN", 15);
+	SelectObject(CDC, exhf);
+	DeleteObject(hf);
+
+	hf = (HFONT)GetStockObject(BLACK_PEN);
+	SetTextColor(CDC, RGB(255, 0, 0));
+	SetBkColor(CDC, RGB(0, 255, 255));
+	SetBkMode(CDC, OPAQUE);
+	SetTextAlign(CDC, TA_LEFT);
+	TextOut(CDC, 0, 160, "Ўрифт BLACK_PEN", 15);
+	SelectObject(CDC, exhf);
+	DeleteObject(hf);
+
+	hf = (HFONT)GetStockObject(OEM_FIXED_FONT);
+	SetTextColor(CDC, RGB(0, 0, 255));
+	SetBkColor(CDC, RGB(255, 255, 0));
+	SetBkMode(CDC, OPAQUE);
+	SetTextAlign(CDC, TA_LEFT);
+	TextOut(CDC, 0, 180, "Ўрифт OEM_FIXED_FONT", 21);
+	SelectObject(CDC, exhf);
+	DeleteObject(hf);
+
+	hf = (HFONT)GetStockObject(ANSI_FIXED_FONT);
+	SetTextColor(CDC, RGB(0, 255, 0));
+	SetBkColor(CDC, RGB(0, 0, 255));
+	SetBkMode(CDC, OPAQUE);
+	SetTextAlign(CDC, TA_LEFT);
+	TextOut(CDC, 300, 0, "Ўрифт ANSI_FIXED_FONT", 21);
+	SelectObject(CDC, exhf);
+	DeleteObject(hf);
+
+	hf = (HFONT)GetStockObject(ANSI_VAR_FONT);
+	SetTextColor(CDC, RGB(0, 0, 255));
+	SetBkColor(CDC, RGB(0, 255, 0));
+	SetBkMode(CDC, OPAQUE);
+	SetTextAlign(CDC, TA_LEFT);
+	TextOut(CDC, 300, 20, "Ўрифт ANSI_VAR_FONT", 19);
+	SelectObject(CDC, exhf);
+	DeleteObject(hf);
+
+	hf = (HFONT)GetStockObject(SYSTEM_FONT);
+	SetTextColor(CDC, RGB(128, 0, 0));
+	SetBkColor(CDC, RGB(0, 255, 0));
+	SetBkMode(CDC, OPAQUE);
+	SetTextAlign(CDC, TA_LEFT);
+	TextOut(CDC, 300, 40, "Ўрифт SYSTEM_FONT", 19);
+	SelectObject(CDC, exhf);
+	DeleteObject(hf);
+
+	hf = (HFONT)GetStockObject(DEVICE_DEFAULT_FONT);
+	SetTextColor(CDC, RGB(0, 128, 0));
+	SetBkColor(CDC, RGB(255, 0, 0));
+	SetBkMode(CDC, OPAQUE);
+	SetTextAlign(CDC, TA_LEFT);
+	TextOut(CDC, 300, 60, "Ўрифт DEVICE_DEFAULT_FONT", 25);
+	SelectObject(CDC, exhf);
+	DeleteObject(hf);
+
+	hf = (HFONT)GetStockObject(DEFAULT_GUI_FONT);
+	SetTextColor(CDC, RGB(0, 0, 128));
+	SetBkColor(CDC, RGB(128, 0, 0));
+	SetBkMode(CDC, OPAQUE);
+	SetTextAlign(CDC, TA_LEFT);
+	TextOut(CDC, 300, 80, "Ўрифт DEFAULT_GUI_FONT", 25);
+	SelectObject(CDC, exhf);
+	DeleteObject(hf);
+
+	hf = (HFONT)GetStockObject(DEFAULT_PALETTE);
+	SetTextColor(CDC, RGB(64, 0, 0));
+	SetBkColor(CDC, RGB(0, 128, 0));
+	SetBkMode(CDC, OPAQUE);
+	SetTextAlign(CDC, TA_LEFT);
+	TextOut(CDC, 300, 100, "Ўрифт DEFAULT_PALETTE", 21);
+	SelectObject(CDC, exhf);
+	DeleteObject(hf);
+
+	hf = (HFONT)GetStockObject(SYSTEM_FIXED_FONT);
+	SetTextColor(CDC, RGB(0, 64, 0));
+	SetBkColor(CDC, RGB(0, 0, 128));
+	SetBkMode(CDC, OPAQUE);
+	SetTextAlign(CDC, TA_LEFT);
+	TextOut(CDC, 300, 120, "Ўрифт SYSTEM_FIXED_FONT", 23);
+	SelectObject(CDC, exhf);
+	DeleteObject(hf);
+
+	hf = (HFONT)GetStockObject(DEFAULT_GUI_FONT);
+	SetTextColor(CDC, RGB(0, 0, 64));
+	SetBkColor(CDC, RGB(64, 0, 0));
+	SetBkMode(CDC, OPAQUE);
+	SetTextAlign(CDC, TA_LEFT);
+	TextOut(CDC, 300, 140, "Ўрифт DEFAULT_GUI_FONT", 22);
+	SelectObject(CDC, exhf);
+	DeleteObject(hf);
+
+	hf = (HFONT)GetStockObject(DC_BRUSH);
+	SetTextColor(CDC, RGB(32, 0, 0));
+	SetBkColor(CDC, RGB(0, 64, 0));
+	SetBkMode(CDC, OPAQUE);
+	SetTextAlign(CDC, TA_LEFT);
+	TextOut(CDC, 300, 160, "Ўрифт DC_BRUSH", 14);
+	SelectObject(CDC, exhf);
+	DeleteObject(hf);
+
+	hf = (HFONT)GetStockObject(DC_PEN);
+	SetTextColor(CDC, RGB(255, 255, 255));
+	SetBkColor(CDC, RGB(0, 0, 64));
+	SetBkMode(CDC, OPAQUE);
+	SetTextAlign(CDC, TA_LEFT);
+	TextOut(CDC, 300, 180, "Ўрифт DC_PEN", 12);
+	SelectObject(CDC, exhf);
+	DeleteObject(hf);
+
+	// принуд вывод в окно вывода
 	InvalidateRect(hWndOut, 0, 1);
 }
