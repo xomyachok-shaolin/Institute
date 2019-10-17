@@ -20,6 +20,7 @@ void fonts(void) {
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 	
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(LTGRAY_BRUSH);
 	SetTextColor(CDC, RGB(255, 255, 0));
 	SetBkColor(CDC, RGB(0, 0, 255));
@@ -29,6 +30,7 @@ void fonts(void) {
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(GRAY_BRUSH);
 	SetTextColor(CDC, RGB(0, 255, 255));
 	SetBkColor(CDC, RGB(255, 0, 0));
@@ -38,6 +40,7 @@ void fonts(void) {
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(DKGRAY_BRUSH);
 	SetTextColor(CDC, RGB(255, 0, 255));
 	SetBkColor(CDC, RGB(0, 255, 0));
@@ -47,6 +50,7 @@ void fonts(void) {
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(BLACK_BRUSH);
 	SetTextColor(CDC, RGB(128, 128, 0));
 	SetBkColor(CDC, RGB(0, 0, 128));
@@ -56,6 +60,7 @@ void fonts(void) {
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(HOLLOW_BRUSH);
 	SetTextColor(CDC, RGB(0, 128, 128));
 	SetBkColor(CDC, RGB(128, 0, 0));
@@ -65,6 +70,7 @@ void fonts(void) {
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(NULL_BRUSH);
 	SetTextColor(CDC, RGB(128, 0, 128));
 	SetBkColor(CDC, RGB(0, 128, 0));
@@ -74,6 +80,7 @@ void fonts(void) {
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(WHITE_PEN);
 	SetTextColor(CDC, RGB(0, 255, 0));
 	SetBkColor(CDC, RGB(255, 0, 255));
@@ -83,6 +90,7 @@ void fonts(void) {
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(BLACK_PEN);
 	SetTextColor(CDC, RGB(255, 0, 0));
 	SetBkColor(CDC, RGB(0, 255, 255));
@@ -92,6 +100,7 @@ void fonts(void) {
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(OEM_FIXED_FONT);
 	SetTextColor(CDC, RGB(0, 0, 255));
 	SetBkColor(CDC, RGB(255, 255, 0));
@@ -101,6 +110,7 @@ void fonts(void) {
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(ANSI_FIXED_FONT);
 	SetTextColor(CDC, RGB(0, 255, 0));
 	SetBkColor(CDC, RGB(0, 0, 255));
@@ -110,6 +120,7 @@ void fonts(void) {
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(ANSI_VAR_FONT);
 	SetTextColor(CDC, RGB(0, 0, 255));
 	SetBkColor(CDC, RGB(0, 255, 0));
@@ -119,6 +130,7 @@ void fonts(void) {
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(SYSTEM_FONT);
 	SetTextColor(CDC, RGB(128, 0, 0));
 	SetBkColor(CDC, RGB(0, 255, 0));
@@ -128,6 +140,7 @@ void fonts(void) {
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(DEVICE_DEFAULT_FONT);
 	SetTextColor(CDC, RGB(0, 128, 0));
 	SetBkColor(CDC, RGB(255, 0, 0));
@@ -137,15 +150,17 @@ void fonts(void) {
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(DEFAULT_GUI_FONT);
 	SetTextColor(CDC, RGB(0, 0, 128));
 	SetBkColor(CDC, RGB(128, 0, 0));
 	SetBkMode(CDC, OPAQUE);
 	SetTextAlign(CDC, TA_LEFT);
-	TextOut(CDC, 300, 80, "״נטפע DEFAULT_GUI_FONT", 25);
+	TextOut(CDC, 300, 80, "״נטפע DEFAULT_GUI_FONT", 22);
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(DEFAULT_PALETTE);
 	SetTextColor(CDC, RGB(64, 0, 0));
 	SetBkColor(CDC, RGB(0, 128, 0));
@@ -155,6 +170,7 @@ void fonts(void) {
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(SYSTEM_FIXED_FONT);
 	SetTextColor(CDC, RGB(0, 64, 0));
 	SetBkColor(CDC, RGB(0, 0, 128));
@@ -164,30 +180,23 @@ void fonts(void) {
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
-	hf = (HFONT)GetStockObject(DEFAULT_GUI_FONT);
-	SetTextColor(CDC, RGB(0, 0, 64));
-	SetBkColor(CDC, RGB(64, 0, 0));
-	SetBkMode(CDC, OPAQUE);
-	SetTextAlign(CDC, TA_LEFT);
-	TextOut(CDC, 300, 140, "״נטפע DEFAULT_GUI_FONT", 22);
-	SelectObject(CDC, exhf);
-	DeleteObject(hf);
-
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(DC_BRUSH);
 	SetTextColor(CDC, RGB(32, 0, 0));
 	SetBkColor(CDC, RGB(0, 64, 0));
 	SetBkMode(CDC, OPAQUE);
 	SetTextAlign(CDC, TA_LEFT);
-	TextOut(CDC, 300, 160, "״נטפע DC_BRUSH", 14);
+	TextOut(CDC, 300, 140, "״נטפע DC_BRUSH", 14);
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
+	exhf = (HFONT)SelectObject(CDC, hf);
 	hf = (HFONT)GetStockObject(DC_PEN);
 	SetTextColor(CDC, RGB(255, 255, 255));
 	SetBkColor(CDC, RGB(0, 0, 64));
 	SetBkMode(CDC, OPAQUE);
 	SetTextAlign(CDC, TA_LEFT);
-	TextOut(CDC, 300, 180, "״נטפע DC_PEN", 12);
+	TextOut(CDC, 300, 160, "״נטפע DC_PEN", 12);
 	SelectObject(CDC, exhf);
 	DeleteObject(hf);
 
