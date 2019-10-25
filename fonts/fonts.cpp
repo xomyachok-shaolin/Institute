@@ -160,9 +160,9 @@ void fonts(void) {
 	DeleteObject(hf);
 
 	TEXTMETRIC txm;
-	hf = CreateFont(16, 5, 0, 0, 0, 0, 0, 0, RUSSIAN_CHARSET, 0, 0, 0, 0, "Tahoma");
+	hf = CreateFont(160, 5, 0, 0, 0, 0, 0, 0, RUSSIAN_CHARSET, 0, 0, 0, 0, "Arial");
 	exhf = (HFONT)SelectObject(hdc, hf);
-	TextOut(hdc, 0, 420, "Width small width", 20);
+	TextOut(hdc, 0, 420, "A", 1);
 
 	GetTextMetrics(hdc, &txm);
 
