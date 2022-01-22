@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "spline", "spline\spline.vcxproj", "{C5ADA8C8-3371-4462-A3E6-0342BF0C7AF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5ADA8C8-3371-4462-A3E6-0342BF0C7AF0}.Debug|x86.ActiveCfg = Debug|Win32
+		{C5ADA8C8-3371-4462-A3E6-0342BF0C7AF0}.Debug|x86.Build.0 = Debug|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09BBCDE4-A143-4A92-96C9-0C09ED347571}
+	EndGlobalSection
+EndGlobal

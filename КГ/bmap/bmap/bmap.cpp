@@ -27,6 +27,7 @@ void bitmap() {
 
 	/* Анализируем эл-ты палитры */
 	RGBQUAD* ppal = &pbmi->bmiColors[0];
+	pbmi->bmiColors[1].rgbBlue = 127;
 	// массив пиксельного набора
 	BYTE* dibs = (BYTE*)LocalAlloc(LPTR, pbmi->bmiHeader.biSizeImage);
 	// читаем пиксельный набор
@@ -73,7 +74,7 @@ void metafile() {
 	HDC hdc2 = CreateEnhMetaFile(DCEMF, "quad.emf", &rc_quad, NULL);
 	SetMapMode(hdc2, MM_HIMETRIC);
 	
-	HPEN hp = CreatePen(PS_SOLID | PS_INSIDEFRAME, 300, 0);
+	HPEN hp = CreatePen(PS_SOLID | PS_INSIDEFRAME, 300,  0);
 	SelectObject(hdc2, hp);
 	Rectangle(hdc2, 0, 0, W, -H);
 	DeleteObject(hp);

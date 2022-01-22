@@ -80,11 +80,14 @@ LRESULT CALLBACK GDProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) {
         }
         return 0;
     case WM_PAINT:
+		/* перерисовка изображения */
         hdc = BeginPaint(hWnd, &ps);
+		/* область обновления */
         L = ps.rcPaint.left;
         T = ps.rcPaint.top;
         W = ps.rcPaint.right - L;
         H = ps.rcPaint.bottom - T;
+		/* копируем изображение из CDC в графическое устройство hdc */
         BitBlt(hdc, L, T, W, H, CDC, L, T, SRCCOPY);
         EndPaint(hWnd, &ps);
         return 0;
